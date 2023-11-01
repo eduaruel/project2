@@ -1,8 +1,15 @@
+const mongoose = require('mongoose');
+require('./config/db');
+
 const Express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const routerr = require('./routes');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const MongoStore = require('connect-mongo');
 
+require('dotenv').config({path: 'variables.env'});
 const app = Express();
 
 //hablitar handlebar como view
@@ -15,8 +22,17 @@ app.engine(
 app.set('view engine', 'handlebars');
 
 app.use(Express.static(path.join(__dirname, 'public')));
+
+app.use(cookieParser());
+app.use(
+	session({
+		secret: process.env.SECRETO,
+		key: process.env.KEY,
+		resave: false,
+		saveUninitialized: false,
+		store: MongoStore.create({mongoUrl: process.env.DATABASE}),
+	}),
+);
 app.use('/', routerr());
 
-const port = 4000;
-
-app.listen(port, console.log('Servidor Arriba'));
+app.listen(process.env.PUERTO, console.log('Servidor Arriba'));
