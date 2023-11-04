@@ -1,3 +1,6 @@
+:root {
+	--negro: #393a39;
+}
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
@@ -9,7 +12,8 @@ html {
 }
 body {
 	/* background-color: #100e17; */
-	background-color: #166141;
+	background-color: #2e8252;
+
 	font-family: 'Rubik', sans-serif, 'Poppins', sans-serif;
 	font-size: 1.6rem;
 }
@@ -22,6 +26,7 @@ h2,
 h3 {
 	color: #ffffff;
 	margin: 0;
+	font-size: 2.8rem;
 }
 h1 {
 	font-weight: 900;
@@ -31,9 +36,7 @@ h2 {
 	font-weight: 700;
 	font-size: 4rem;
 }
-h3 {
-	font-size: 2.8rem;
-}
+
 .contenedor {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -43,7 +46,21 @@ h3 {
 	padding-top: 2rem;
 	border-bottom: 1px solid #272727;
 }
-/** Botones **/
+/* fondo */
+.fondo {
+	position: relative;
+}
+.fondo::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/margarita.png');
+	background-size: cover;
+	opacity: 0.75; /* Ajusta la opacidad según sea necesario */
+	z-index: -1;
+}
+/* Botones */
 .btn {
 	font-size: 1.8rem;
 	padding: 1.4rem 6rem;
@@ -186,7 +203,7 @@ h3 {
 .caja .puesto,
 .caja .etiqueta {
 	font-weight: 700;
-	color: #040404;
+	color: var(--negro);
 	font-size: 2.6rem;
 	margin: 0;
 	text-align: left;
@@ -214,7 +231,7 @@ h3 {
 }
 
 .vacante-contenedor h2 {
-	color: #616065;
+	color: #333336;
 	font-size: 2.4rem;
 }
 .contenido-superior {
@@ -266,7 +283,7 @@ h3 {
 	margin: 4rem auto 0 auto;
 }
 .default-form h3 {
-	color: #616065;
+	color: var(--negro);
 	font-size: 2.4rem;
 	margin-bottom: 3rem;
 	text-transform: uppercase;

@@ -9,9 +9,13 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
     <title>{{nombrePagina}}</title>
 </head>
 <body>
+    <div class="fondo">
+
     <div class="nombre-sitio contenedor">
         <h1>
             <a href="/">SG Venezuela C.A</a>
@@ -38,6 +42,7 @@
             <a href="/vacantes/nueva" class="btn btn-azul">Publicar nueva vacantes</a>
         {{/if}}
     </header>
+    </div>
 
     <div class="contenido-principal contenedor">
         {{{body}}}
