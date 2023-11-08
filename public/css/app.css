@@ -1,5 +1,5 @@
 :root {
-	--negro: #393a39;
+	--negro: #39393a;
 }
 html {
 	box-sizing: border-box;
@@ -12,7 +12,7 @@ html {
 }
 body {
 	/* background-color: #100e17; */
-	background-color: #2e8252;
+	background-color: rgba(118, 168, 94, 255);
 
 	font-family: 'Rubik', sans-serif, 'Poppins', sans-serif;
 	font-size: 1.6rem;
@@ -55,9 +55,9 @@ h2 {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-image: url('../img/margarita.png');
+	background-image: url('../img/mapa2.jpg');
 	background-size: cover;
-	opacity: 0.75; /* Ajusta la opacidad según sea necesario */
+	/* opacity: 0.9; Ajusta la opacidad según sea necesario */
 	z-index: -1;
 }
 /* Botones */

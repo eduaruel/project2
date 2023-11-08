@@ -1,6 +1,6 @@
 exports.formularioNuevaVacante = (req, res) => {
 	res.render('nueva-vacante', {
-		nombrePagina: 'Vacantes Disponibles',
+		nombrePagina: 'Registrar Vacantes',
 		tagline: 'completa el formulario y publica tu vacante',
 	});
 };

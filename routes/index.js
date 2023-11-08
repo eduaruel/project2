@@ -7,7 +7,7 @@ module.exports = () => {
 	router.get('/', homeCrontoller.mostrarTrabajos);
 
 	//vacantes
-	router.get('/vacantes/nueva', vacanteCrontoller.formularioNuevaVacante);
+	router.get('/views/nueva-vacante.handlebars', vacanteCrontoller.formularioNuevaVacante);
 
 	return router;
 };
