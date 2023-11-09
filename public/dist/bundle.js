@@ -15,7 +15,7 @@
   \**************************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://proyecto-final/./public/js/app.js?");
+eval("document.addEventListener('DOMContentLoaded', () => {\r\n\tconst skills = document.querySelector('.lista-conocimientos');\r\n\tif (skills) {\r\n\t\tskills.addEventListener('click', agregarSkills);\r\n\t}\r\n});\r\n\r\nconst agregarSkills = (e) => {\r\n\tconsole.log(e.target);\r\n};\r\n\n\n//# sourceURL=webpack://proyecto-final/./public/js/app.js?");
 
 /***/ })
 

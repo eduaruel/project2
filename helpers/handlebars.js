@@ -11,6 +11,7 @@ module.exports = {
 			'ingeniero electricista',
 			'ingeniero mecanico',
 			'ingeniero electronico',
+			'ingeniero quimico',
 		];
 
 		let html = '';
