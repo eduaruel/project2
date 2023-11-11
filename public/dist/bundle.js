@@ -15,7 +15,7 @@
   \**************************/
 /***/ (() => {
 
-eval("document.addEventListener('DOMContentLoaded', () => {\r\n\tconst skills = document.querySelector('.lista-conocimientos');\r\n\tif (skills) {\r\n\t\tskills.addEventListener('click', agregarSkills);\r\n\t}\r\n});\r\n\r\nconst agregarSkills = (e) => {\r\n\tconsole.log(e.target);\r\n};\r\n\n\n//# sourceURL=webpack://proyecto-final/./public/js/app.js?");
+eval("document.addEventListener('DOMContentLoaded', () => {\r\n\tconst skills = document.querySelector('.lista-conocimientos');\r\n\tif (skills) {\r\n\t\tskills.addEventListener('click', agregarSkills);\r\n\t}\r\n});\r\nconst skills = new Set();\r\nconst agregarSkills = (e) => {\r\n\t//console.log(e.target);\r\n\tif (e.target.tagName === 'LI') {\r\n\t\t//skills.add(e.target.textContent);\r\n\t\tif (e.target.classList.contains('activo')) {\r\n\t\t\t// quitar el activo\r\n\t\t\tskills.delete(e.target.textContent);\r\n\t\t\te.target.classList.remove('activo');\r\n\t\t} else {\r\n\t\t\t// colocar nuevamente el activo\r\n\t\t\tskills.add(e.target.textContent);\r\n\t\t\te.target.classList.add('activo');\r\n\t\t}\r\n\t}\r\n\t// console.log(skills);\r\n\tconst skillsArray = [...skills];\r\n\tdocument.querySelector('#skills').value = skillsArray;\r\n};\r\n\n\n//# sourceURL=webpack://proyecto-final/./public/js/app.js?");
 
 /***/ })
 

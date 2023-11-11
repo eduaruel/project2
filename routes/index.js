@@ -8,6 +8,7 @@ module.exports = () => {
 
 	//vacantes
 	router.get('/views/nueva-vacante.handlebars', vacanteCrontoller.formularioNuevaVacante);
+	router.post('/views/nueva-vacante.handlebars', vacanteCrontoller.agregarVacante);
 
 	return router;
 };
