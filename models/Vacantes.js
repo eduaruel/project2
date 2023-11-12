@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const slug = require('slug');
 const nanoid = mongoose.plugin(require('mongoose-nanoid'), {
-	length: (size = 1000),
-	alphabets: 'abcd@',
+	length: (size = 10),
+	alphabets: 'abcdefghijklmnopqrstuvwxyz1234567890',
 });
 
 //console.log(nanoid); //11936695 // ObjectId: [class ObjectId extends BSONValue] { index: 14056036 },
@@ -55,4 +55,5 @@ vacanteSchema.pre('save', (next) => {
 
 	next();
 });
+
 module.exports = mongoose.model('Vacante', vacanteSchema);

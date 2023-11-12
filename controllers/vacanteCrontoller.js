@@ -9,11 +9,18 @@ exports.formularioNuevaVacante = (req, res) => {
 };
 
 //agregar vacantes a la base de datos
-exports.agregarVacante = (req, res) => {
+exports.agregarVacante = async (req, res) => {
 	const vacante = new Vacante(req.body);
 	//console.log(req.body);
 
-	//crear arreglo de skills
+	// crear arreglo de skills
 	vacante.skills = req.body.skills.split(',');
-	console.log(vacante);
+	//console.log(vacante);
+
+	// nueva Vacante en la parte de almacenamiento de la base de dato
+	const nuevaVacante = await vacante.save();
+	//console.log(nuevaVacante);
+
+	// redireccinamiento
+	res.redirect(`/vacantes/${nuevaVacante.url}`);
 };
