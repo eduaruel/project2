@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 require('./config/db');
 
+
+const punycode = require('punycode');
 const Express = require('express');
+const handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 const path = require('path');
 const routerr = require('./routes');
 const session = require('express-session');
@@ -13,14 +17,15 @@ const bodyParser = require('body-parser');
 require('dotenv').config({path: 'variables.env'});
 const app = Express();
 
+
 //habilitar bodyParser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //hablitar handlebar como view
-app.engine(
-	'handlebars',
+app.engine('handlebars',
 	exphbs.engine({
+		handlebars: allowInsecurePrototypeAccess(handlebars),
 		defaultLayout: 'layout',
 		helpers: require('./helpers/handlebars'),
 	}),
@@ -42,3 +47,4 @@ app.use(
 app.use('/', routerr());
 
 app.listen(process.env.PUERTO, console.log('Servidor Arriba'));
+

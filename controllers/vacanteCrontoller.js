@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Vacante = mongoose.model('Vacante');
+const Vacante = require('../models/Vacantes');
 
 exports.formularioNuevaVacante = (req, res) => {
 	res.render('nueva-vacante', {
