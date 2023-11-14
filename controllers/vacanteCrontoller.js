@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Vacante = require('../models/Vacantes');
+const Vacante = mongoose.model('Vacante');
 
 exports.formularioNuevaVacante = (req, res) => {
 	res.render('nueva-vacante', {
@@ -24,3 +24,16 @@ exports.agregarVacante = async (req, res) => {
 	// redireccinamiento
 	res.redirect(`/vacantes/${nuevaVacante.url}`);
 };
+
+//mostrar nueva Vacante
+exports.mostrarVacante = async (req, res, next) => {
+    const vacante = await Vacante.findOne({ url: req.params.url });
+    // si no hay resultados
+    if(!vacante) return next();
+
+    res.render('vacante', {
+        vacante,
+        nombrePagina : vacante.titulo,
+        barra: true
+    })
+}

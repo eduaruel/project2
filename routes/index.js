@@ -10,5 +10,8 @@ module.exports = () => {
 	router.get("/vacantes/nueva", vacanteCrontoller.formularioNuevaVacante);
 	  router.post('/vacantes/nueva', vacanteCrontoller.agregarVacante
     );
+
+	// mostrar Vacante
+	router.get("/vacante/:url", vacanteCrontoller.mostrarVacante)
 	return router;
 };

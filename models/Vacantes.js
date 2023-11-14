@@ -50,7 +50,7 @@ vacantesSchema.pre('save', function(next) {
 
     // crear la url
     const url = slug(this.titulo);
-    this.url = `${url}-${nanoid.ObjectId.index} `;
+    this.url =`${url}-${nanoid.ObjectId.index}`;
 
     next();
 })
