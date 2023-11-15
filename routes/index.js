@@ -1,17 +1,21 @@
 const Express = require('express');
 const router = Express.Router();
-const homeCrontoller = require('../controllers/homeController.js');
-const vacanteCrontoller = require('../controllers/vacanteCrontoller.js');
+const homeController = require('../controllers/homeController.js');
+const vacantesController = require('../controllers/vacanteCrontoller.js');
 
 module.exports = () => {
-	router.get('/', homeCrontoller.mostrarTrabajos);
+	  router.get('/', homeController.mostrarTrabajos);
 
-	//vacantes
-	router.get("/vacantes/nueva", vacanteCrontoller.formularioNuevaVacante);
-	  router.post('/vacantes/nueva', vacanteCrontoller.agregarVacante
-    );
+    // Crear Vacantes
+    router.get('/vacantes/nueva',vacantesController.formularioNuevaVacante );
 
-	// mostrar Vacante
-	router.get("/vacante/:url", vacanteCrontoller.mostrarVacante)
+    router.post('/vacantes/nueva',vacantesController.agregarVacante );
+
+    // Mostrar Vacante (singular)
+    router.get('/vacantes/:url',vacantesController.mostrarVacante );
+
+    // Editar Vacante
+    router.get('/vacantes/editar/:url',vacantesController.formEditarVacante);
+
 	return router;
 };

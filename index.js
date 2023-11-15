@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 require('./config/db');
 
 
-const punycode = require('punycode');
+// const punycode = require('punycode');
 const Express = require('express');
 const handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 const path = require('path');
-const routerr = require('./routes');
+const router = require('./routes');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const MongoStore = require('connect-mongo');
@@ -44,7 +44,7 @@ app.use(
 		store: MongoStore.create({mongoUrl: process.env.DATABASE}),
 	}),
 );
-app.use('/', routerr());
+app.use('/', router());
 
 app.listen(process.env.PUERTO, console.log('Servidor Arriba'));
 
