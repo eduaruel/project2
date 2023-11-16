@@ -1,5 +1,5 @@
 <main class="lista-vacantes">
-    <h2>Lista de Vacantes</h2>
+    <h2>Vacantes Disponible</h2>
 
     {{#if vacantes.length}}
         {{#each vacantes as | vacante |}} 
@@ -10,11 +10,11 @@
                 </div>
                 <div class="caja">
                     <p class="etiqueta">Ubicación</p>
-                    <p class="nombre">{{vacante.ubicacion}}</p>
+                    <p class="etiqueta">{{vacante.ubicacion}}</p>
                 </div>
                 <div class="caja">
                     <p class="etiqueta">Contrato</p>
-                    <p class="nombre contrato">{{vacante.contrato}}</p>
+                    <p class="etiqueta contrato">{{vacante.contrato}}</p>
                 </div>
                 <div class="caja centrar-vertical">
                     <a href="/vacantes/{{vacante.url}}" class="btn btn-azul">Más Info</a>
