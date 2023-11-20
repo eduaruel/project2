@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg custom_nav-container end">
+    <a class="navbar-brand" href="/">
+        <img src="/" alt="" />
+        <span> SG venezuela C.A</span>
+    </a>
+    <div class="">
+
+    </div>
+    <div>
+
+    {{#if barra}}
+    <div class="buscador">
+        <form action="/buscador" method="POST">
+            <input type="text" name="q" class="buscar">
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
+    {{/if}}
+    </div>
+</nav>

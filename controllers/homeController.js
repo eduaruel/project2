@@ -13,4 +13,6 @@ exports.mostrarTrabajos = async (req, res,next) => {
 		boton: true,
 		vacantes,
 	});
+	
 };
+

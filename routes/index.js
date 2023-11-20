@@ -5,6 +5,7 @@ const vacantesController = require('../controllers/vacanteCrontoller.js');
 
 module.exports = () => {
 	  router.get('/', homeController.mostrarTrabajos);
+	  
 	 
 
     // Crear Vacantes

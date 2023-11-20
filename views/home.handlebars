@@ -1,9 +1,8 @@
-<main class="lista-vacantes">
-    <h2>Vacantes Disponible</h2>
-
+<main class="">
+    <h2 class="center">Vacantes Disponibles</h2>
     {{#if vacantes.length}}
         {{#each vacantes as | vacante |}} 
-            <div class="vacante">
+            <div class="lista-vacantes">
                 <div class="caja">
                     <h3>{{vacante.empresa}}</h3>
                     <p class="puesto">{{vacante.titulo}}</p>
@@ -16,8 +15,8 @@
                     <p class="etiqueta">Contrato</p>
                     <p class="etiqueta contrato">{{vacante.contrato}}</p>
                 </div>
-                <div class="caja centrar-vertical">
-                    <a href="/vacantes/{{vacante.url}}" class="btn btn-azul">Más Info</a>
+                <div class="custom_menu-btn">
+                    <a href="/vacantes/{{vacante.url}}" class="slider_section detail-box btn-box .btn-1">Más Info</a>
                 </div>
             </div> 
         {{/each}}

@@ -28,6 +28,8 @@ app.engine('handlebars',
 		handlebars: allowInsecurePrototypeAccess(handlebars),
 		defaultLayout: 'layout',
 		helpers: require('./helpers/handlebars'),
+		 extname: 'handlebars',
+		partialsDir:['views/componentes']
 	}),
 );
 app.set('view engine', 'handlebars');
