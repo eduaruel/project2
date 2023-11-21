@@ -132,6 +132,10 @@
 	.buscador form {
 		flex: 40%;
 	}
+	.end {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
 @media (max-width: 576px) {
@@ -143,12 +147,7 @@
 		flex-basis: 52%;
 	}
 	.lista-vacantes {
-		display: grid;
 		grid-template-columns: repeat(1, 1fr);
-		grid-gap: 3rem;
-		grid-template-rows: 10rem;
-		margin: 3rem;
-		padding-left: 1rem;
 	}
 }
 
@@ -164,10 +163,6 @@
 	.freelance_section .tab_container .t-link-box .detail-box h3 {
 		font-size: 22px;
 	}
-	.end {
-		display: grid;
-		grid-template-columns: repeat(1, 1fr);
-	}
 }
 
 @media (max-width: 360px) {
@@ -178,12 +173,6 @@
 	}
 }
 @media (min-width: 768px) {
-	.caja {
-		flex: 1;
-	}
-	.caja:first-of-type {
-		flex: 2;
-	}
 	.buscador input[type='text'] {
 		background-color: rgba(255, 255, 255, 0.1);
 		width: 100%;
@@ -193,5 +182,9 @@
 		border-radius: 1rem;
 		color: white;
 		font-size: 1.2rem;
+	}
+	.contenedor {
+		max-width: 200rem;
+		margin: 0 auto;
 	}
 }

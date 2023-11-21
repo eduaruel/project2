@@ -36,6 +36,7 @@ app.set('view engine', 'handlebars');
 
 app.use(Express.static(path.join(__dirname, 'public')));
 
+
 app.use(cookieParser());
 app.use(
 	session({

@@ -5,6 +5,7 @@ exports.formularioNuevaVacante = (req, res) => {
 	res.render('nueva-vacante', {
 		nombrePagina: 'Registrar Vacantes',
 		tagline: 'completa el formulario y publica tu vacante',
+		boton: false,
 	});
 };
 
@@ -34,7 +35,7 @@ exports.mostrarVacante = async (req, res, next) => {
     res.render('vacante', {
         vacante,
         nombrePagina : vacante.titulo,
-        barra: true
+        boton:false
     })
 }
 
@@ -48,7 +49,7 @@ exports.formEditarVacante = async (req, res, next) => {
 	res.render('editar-vacante',{
 		vacante,
 		nombrePagina: `Editar-${vacante.titulo}`,
-		barra: true
+		barra: false
 	})
 }
 
