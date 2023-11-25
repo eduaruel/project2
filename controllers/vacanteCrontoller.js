@@ -34,7 +34,7 @@ exports.mostrarVacante = async (req, res, next) => {
 
     res.render('vacante', {
         vacante,
-        nombrePagina : vacante.titulo,
+        nombrePagina: vacante.titulo,
         boton:false
     })
 }
